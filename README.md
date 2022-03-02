@@ -6,7 +6,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 ### Project Overview
 
- 
+In this project, we have explored the geometric modeling step by step and finally implemented the loop subdivision of mesh upsampling. Firstly, we build Bezier curves and Bezier surfaces according to the de Casteljau's algorithm, and then we apply these methods to the actual graphics. Here, we come into contact with the Half-Edge Data Structure, which brings great convenience for us to deal with unit graphics through extensive definitions. We implemented normals and some structural transformations in the data structure, including flip and split, which are common components of Loop subdivision. Finally, we integrated them to complete the exploration of geometric modeling.
 
 ### Part1: Bezier Curves with 1D de Casteljau Subdivision
 #### 1-1 Briefly explain de Casteljau's algorithm and how you implemented it in order to evaluate Bezier curves.
