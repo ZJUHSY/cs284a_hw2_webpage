@@ -135,7 +135,23 @@ In the next step, we split and flip every edge in the mesh. To avoid splitting n
 
 Instead, we label those aforementioned two splitted edges as old edge by the data strcuture. And we only split those edges that are connected by two old vertex and flip edges that are new and connected by an old vertex and a new vertex. This will resolve the problem mentioned above. (We use ***EdgeIter->isNew*** and ***VertexIter->newPosition*** to label whether a point and an edge is new or old.)
 
+### Sharp Corners And Edges
 
+During the experiment, we found that the graphic density of some sharp corners and sharp edges will increase after edge split, resulting in uneven distribution of the whole image at the original corner, as shown in the figure below.
+
+Corner before split:
+![6-2-1](/pic/6-2-1.png)
+Corner after split:
+![6-2-2](/pic/6-2-2.png)
+
+We think this may be related to the corresponding degree of angle of the corner in 3D space. If the corner is spliced by the three right angles shown in the above figure, the density will be uneven after multiple splits. However, if we splice the corner into three 60 degree angles through flip and split, as shown in the figure below, the image will still maintain uniform density after multiple split.
+
+Corner before split:
+![6-2-3](/pic/6-2-3.png)
+Corner after split:
+![6-2-4](/pic/6-2-4.png)
+
+In order to verify our assumption, we choose another corner spliced at an angle of 60 degrees, and we also get a uniform graphic distribution after split.
 
 #### Asymetric Problems
 As illustrated on the figures, the cube become asymetric as loop subdivision continues. This can be explained that the original square is not symmetric. And there are two ways to make is symmetric: 1. split 2. split
