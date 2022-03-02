@@ -170,7 +170,7 @@ As illustrated on the figures, the cube become asymetric as loop subdivision con
 We can first see the power of splitting edges. We split each diagonals in the square to make every face symmetric. We can see from picture below the magic of pre-splitting the diagonals. Though the shape is symmetric, the texture is not. 
 ![6-3-4](/pic/6-3-4.png)
 ![6-3-5](/pic/6-3-5.png)
-![6-3-6](/pic/6-3-6.png)
+![6-3-6](/pic/p6-3-6.png)
 
 Therefore, we can  use flip to make the whole cube symmetric, both shape and texture. The procedure (including the original cube after flipping the diagonals to mkae it symmetric is shown below).
 ![6-3-7](/pic/6-3-7.png)
