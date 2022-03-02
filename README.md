@@ -84,15 +84,16 @@ We tried to transform repeatedly in the figure and looked at each Halfedge direc
 Explanation of Implementation:
 
 The principle of edge split is similar to that of edge flip, except that split does not eliminate the original diagonal, but adds a new connection between the middle point and the other two vertices on the basis of retaining the original diagonal. The operations needed to modify various parameters are basically the same as edge flip. The biggest difference in the implementation is that edge split adds a new intermediate point. Similarly, before starting coding, we marked out each Halfedge, Vertex, Edge and Face in the figure according to the provided data structure.
+![5-1-1](/pic/5-1-1.png)
+In Part4, because the setNeighbors() function needs to input the twin of Halfedge, we also define the twin of border when traversing the initial structure. However, in Part5, since the number of variables increases significantly, we no longer define the twin of border, but directly enter Halfedge->twin in setNeighbor(), which can simplify the code.
+![5-1-2](/pic/5-1-2.png)
+The rest of the implementation methods are similar to those in part 4. First traverse each structure in the original figure, then initialize new vertex and face, and finally update all variables.
 
 Debugging tricks:
 
 The trick of this part is similar with Part4.
 It is necessary to determine the name of each variable before writing code, which can help us judge whether the traversal and modified topology is correct in real time. Secondly, in the process of writing code, we need to complete it in a certain order, either in the order of each structure type or in the order of all elements related to each Face. It should be noted that if we choose each structure type as the order, we'd better start with Halfedge, because halfedge is associated with each other, and other structure types are not necessarily associated with each other.
-![5-1-1](/pic/5-1-1.png)
-In Part4, because the setNeighbors() function needs to input the twin of Halfedge, we also define the twin of border when traversing the initial structure. However, in Part5, since the number of variables increases significantly, we no longer define the twin of border, but directly enter Halfedge->twin in setNeighbor(), which can simplify the code.
-![5-1-2](/pic/5-1-2.png)
-The rest of the implementation methods are similar to those in part 4. First traverse each structure in the original figure, then initialize new vertex and face, and finally update all variables.
+
 #### 5-2 Show screenshots of a mesh before and after some edge splits.
 Before edge splits:
 ![5-2-1](/pic/5-2-1.png)
