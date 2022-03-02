@@ -128,6 +128,15 @@ After the combination of both edge splits and edge flips:
 After obtaining the experience of Part4, we carefully drew the reference figure, clarified the logic before writing the code, and achieved BugFree in this part!!!
 
 ### Part6: Loop Subdivision for Mesh Upsampling
+#### Implementation
+We follow the instructions listed on the rubrics. In the first part of our implementation, we first pre-calculate and store the updated coordinates for both new vertices and old vertices using the loop subdivision rule. To be more specific, we store the updated positions in ***VertexIter->newPosition*** for old vertex, ***EdgeIter->newPosition*** for new points. 
+
+In the next step, we split and flip every edge in the mesh. To avoid splitting new edge, we only split edges that are connected by two old vertices. To flip each edge after splitting, we flip only new edges that are connected by a old vertice and a new vertice. The details are tricky here. If we label the two edges that are splitted by the middle points as new edges, it will be difficult to determine which edge to flip. Because we will end up flipping those edges because they are connected by a new vertex and an old vertex, which will produce infinite loop. 
+
+Instead, we label those aforementioned two splitted edges as old edge by the data strcuture. And we only split those edges that are connected by two old vertex and flip edges that are new and connected by an old vertex and a new vertex. This will resolve the problem mentioned above. (We use ***EdgeIter->isNew*** and ***VertexIter->newPosition*** to label whether a point and an edge is new or old.)
+
+####
+
 
 <!-- Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
