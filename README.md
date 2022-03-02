@@ -7,7 +7,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 ### Project Overview
 
 ### Part1: Bezier Curves with 1D de Casteljau Subdivision
-
+![1-2](/pic/1-2.png)
 ### Part2: Bezier Surfaces with Separable 1D de Casteljau
 
 ### Part3: Area-Weighted Vertex Normals
