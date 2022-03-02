@@ -159,16 +159,24 @@ Corner after split:
 ![6-2-6](/pic/6-2-6.png)
 
 #### Asymetric Problems
-As illustrated on the figures, the cube become asymetric as loop subdivision continues. This can be explained that the original square is not symmetric. And there are two ways to make is symmetric: 1. split 2. split
+As illustrated on the figures, the cube become asymetric as loop subdivision continues (picture 6-3-1, 6-3-2, 6-3-3). This can be explained that the original square is not symmetric. And there are two ways to make is symmetric: 1. split 2. flip
+![6-3-1](/pic/6-3-1.png)
+![6-3-2](/pic/6-3-2.png)
+![6-3-3](/pic/6-3-3.png)
 
-We can first see the power of splitting edges. We split each diagonals in the square to make every face symmetric. 
+We can first see the power of splitting edges. We split each diagonals in the square to make every face symmetric. We can see from picture below the magic of pre-splitting the diagonals. Though the shape is symmetric, the texture is not. 
+![6-3-4](/pic/6-3-4.png)
+![6-3-5](/pic/6-3-5.png)
+![6-3-6](/pic/6-3-6.png)
 
-We can also use flip to make the whole cube symmetric. 
-
-
+Therefore, we can  use flip to make the whole cube symmetric, both shape and texture. The procedure (including the original cube after flipping the diagonals to mkae it symmetric is shown below).
+![6-3-7](/pic/6-3-7.png)
+![6-3-8](/pic/6-3-8.png)
+![6-3-9](/pic/6-3-9.png)
+![6-3-10](/pic/6-3-10.png)
 
 ### Webpage Link
-Our web page is deployed at ![here](https://zjuhsy.github.io/cs284a_hw2_webpage/).
+Our web page is deployed at [website](https://zjuhsy.github.io/cs284a_hw2_webpage/).
 
 
 <!-- Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
