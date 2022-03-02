@@ -43,8 +43,9 @@ Third evaluation and get final point:
 ### Part4: Edge Flip
 #### 4-1 Briefly explain how you implemented the edge flip operation and describe any interesting implementation / debugging tricks you have used.
 Explanation of Implementation:
-The original example is as follow, before starting coding, we marked out each Halfedge, Vertex, Edge and Face in the figure according to the provided data structure. In the process of code implementation, we first start from E0, traverse the whole quadrilateral, and define the variable name according to the name marked in the figure.
+The original example is as follow, before starting coding, we marked out each Halfedge, Vertex, Edge and Face in the figure according to the provided data structure. In the process of code implementation, we first start from e0, traverse the whole quadrilateral, and define the variable name according to the name marked in the figure. 
 ![4-1-1](/pic/4-1-1.png)
+The essence of edge flip operation is to eliminate one diagonal edge and then add edge to another diagonal. Before implementation, we also draw the expected result figure as a reference, and then modify it through the setNeighbors() function according to the Halfedges shown in the figure, and then modify other properties.
 ![4-1-2](/pic/4-1-2.png)
 
 Debugging tricks:
