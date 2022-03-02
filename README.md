@@ -37,6 +37,14 @@ Third evaluation and get final point:
 #### 1-4 Show a screenshot of a slightly different Bezier curve by moving the original control points around and modifying the parameter t via mouse scrolling.
 ![1-4](/pic/1-4.png)
 ### Part2: Bezier Surfaces with Separable 1D de Casteljau
+#### **How de Casteljau algorithm extends to Bezier surfaces?**
+Beizer Surface is similar to a high-dimensional version of Beizer curves. For each point, we define a (u,v) point, which u will produce a final beizer 
+curve for one row of control points. Therefore, we will produce a list of control points for each row. And v will determine the final surface point along those moving curves. 
+#### **Implementations**
+We first use lerps to caculate control points in each stage. And then we capsulate the ***evaluate1D*** function calling the ***evaluateStep*** for one step iteratively. Therefore, ***evaluate1D*** will produce a moving curve point for each row of control points. And finally function ***evaluate*** will call ***evaluate1D*** for each of its rows and produce the final surface point mentioned above. 
+Picture 2-1 shows the final rendering output of teapot.bez. 
+
+![2-1](/pic/p2.png)
 
 ### Part3: Area-Weighted Vertex Normals
 
