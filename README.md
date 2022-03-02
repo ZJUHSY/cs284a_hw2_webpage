@@ -9,7 +9,10 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 ### Part1: Bezier Curves with 1D de Casteljau Subdivision
 #### 1-1 Briefly explain de Casteljau's algorithm and how you implemented it in order to evaluate Bezier curves.
 Explanation:
-The de Casteljau's algorithm can calculate the points c(u), u∈[0,1] on the Bezier curve by a set of U values, we can calculate the coordinate sequence on the Bezier curve and draw the Bezier curve by it.
+
+The de Casteljau's algorithm can calculate the points C(u), u∈[0,1] on the Bezier curve by a set of u values, we can calculate the coordinate sequence on the Bezier curve and draw the Bezier curve by it.
+In the simplest case, We select a point C on the vector AB so that C divides the vector AB into u:1-u. Given the coordinates of points a and B and the value of u, we can calculate the coordinates of point C by C = A + (B - A) * u = (1 - u) * A + B * u.
+The de Casteljau's algorithm makes full use of this property. It uses the above method in each segment of a polyline to calculate the u:1-u segmentation points in the polyline, then connects each segmentation point to obtain a new polyline, and continues to use the segmentation method recursively on the new polyline until there is only one point left, the de Casteljau's algorithm can ensure that the point must be on the Bezier Curve. Then, by changing the values of u, we can get the complete Bezier Curve of a polyline.
 
 Implementation:
 
