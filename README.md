@@ -51,6 +51,7 @@ Picture 2-1 shows the final rendering output of teapot.bez.
 ### Part4: Edge Flip
 #### 4-1 Briefly explain how you implemented the edge flip operation and describe any interesting implementation / debugging tricks you have used.
 Explanation of Implementation:
+
 The original example is as follow, before starting coding, we marked out each Halfedge, Vertex, Edge and Face in the figure according to the provided data structure. In the process of code implementation, we first start from e0, traverse the whole quadrilateral, and define the variable name according to the name marked in the figure. 
 ![4-1-1](/pic/4-1-1.png)
 The essence of edge flip operation is to eliminate one diagonal edge and then add edge to another diagonal. Before implementation, we also draw the expected result figure as a reference, and then modify it through the setNeighbors() function according to the Halfedges shown in the figure, and then modify other properties.
@@ -58,6 +59,9 @@ The essence of edge flip operation is to eliminate one diagonal edge and then ad
 
 Debugging tricks:
 
+The overall difficulty of this task is moderate, but the implementation requires a lot of processes, and it is not easy to debug after meeting errors. We need to complete it carefully and methodically.
+
+It is necessary to determine the name of each variable before writing code, which can help us judge whether the traversal and modified topology is correct in real time. Secondly, in the process of writing code, we need to complete it in a certain order, either in the order of each structure type or in the order of all elements related to each Face. It should be noted that if we choose each structure type as the order, we'd better start with Halfedge, because halfedge is associated with each other, and other structure types are not necessarily associated with each other.
 
 #### 4-2 Show screenshots of the teapot before and after some edge flips.
 Before edge flips:
@@ -68,13 +72,16 @@ After edge flips:
 
 #### 4-3 Write about your eventful debugging journey, if you have experienced one.
 
+
 ### Part5: Edge Split
 #### 5-1 Briefly explain how you implemented the edge split operation and describe any interesting implementation / debugging tricks you have used.
-Explanation:
+Explanation of Implementation:
 
-Implementation:
+The principle of edge split is similar to that of edge flip, except that split does not eliminate the original diagonal, but adds a new connection between the middle point and the other two vertices on the basis of retaining the original diagonal. The operations needed to modify various parameters are basically the same as edge flip. The biggest difference in the implementation is that edge split adds a new intermediate point. Similarly, before starting coding, we marked out each Halfedge, Vertex, Edge and Face in the figure according to the provided data structure.
 ![5-1-1](/pic/5-1-1.png)
+In Part4, because the setNeighbors() function needs to input the twin of Halfedge, we also define the twin of border when traversing the initial structure. However, in Part5, since the number of variables increases significantly, we no longer define the twin of border, but directly enter Halfedge->twin in setNeighbor(), which can simplify the code.
 ![5-1-2](/pic/5-1-2.png)
+The rest of the implementation methods are similar to those in part 4. First traverse each structure in the original figure, then initialize new vertex and face, and finally update all variables.
 #### 5-2 Show screenshots of a mesh before and after some edge splits.
 Before edge splits:
 ![5-2-1](/pic/5-2-1.png)
