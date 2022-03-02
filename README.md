@@ -149,7 +149,7 @@ We think this may be related to the corresponding degree of angle of the corner 
 
 Corner before split:  
 ![6-2-3](/pic/6-2-3.png)
-Corner after split:  
+Corner after split:   
 ![6-2-4](/pic/6-2-4.png)
 
 In order to verify our assumption, we choose another corner spliced at an angle of 60 degrees, and we also get a uniform graphic distribution after split.
