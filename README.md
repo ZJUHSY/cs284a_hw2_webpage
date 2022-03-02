@@ -135,7 +135,19 @@ In the next step, we split and flip every edge in the mesh. To avoid splitting n
 
 Instead, we label those aforementioned two splitted edges as old edge by the data strcuture. And we only split those edges that are connected by two old vertex and flip edges that are new and connected by an old vertex and a new vertex. This will resolve the problem mentioned above. (We use ***EdgeIter->isNew*** and ***VertexIter->newPosition*** to label whether a point and an edge is new or old.)
 
-####
+
+
+#### Asymetric Problems
+As illustrated on the figures, the cube become asymetric as loop subdivision continues. This can be explained that the original square is not symmetric. And there are two ways to make is symmetric: 1. split 2. split
+
+We can first see the power of splitting edges. We split each diagonals in the square to make every face symmetric. 
+
+We can also use flip to make the whole cube symmetric. 
+
+
+
+### Webpage Link
+Our web page is deployed at ![here](https://zjuhsy.github.io/cs284a_hw2_webpage/).
 
 
 <!-- Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
