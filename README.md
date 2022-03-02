@@ -152,6 +152,8 @@ Corner after split:
 ![6-2-4](/pic/6-2-4.png)
 
 In order to verify our assumption, we choose another corner spliced at an angle of 60 degrees, and we also get a uniform graphic distribution after split.
+![6-2-5](/pic/6-2-5.png)
+![6-2-6](/pic/6-2-6.png)
 
 #### Asymetric Problems
 As illustrated on the figures, the cube become asymetric as loop subdivision continues. This can be explained that the original square is not symmetric. And there are two ways to make is symmetric: 1. split 2. split
