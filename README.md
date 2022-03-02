@@ -8,6 +8,10 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 ### Part1: Bezier Curves with 1D de Casteljau Subdivision
 #### 1-1 Briefly explain de Casteljau's algorithm and how you implemented it in order to evaluate Bezier curves.
+Explanation:
+
+Implementation:
+
 #### 1-2 Take a look at the provided .bzc files and create your own Bezier curve with 6 control points of your choosing. Use this Bezier curve for your screenshots below.
 ![1-2](/pic/1-2.png)
 #### 1-3 Show screenshots of each step / level of the evaluation from the original control points down to the final evaluated point.
@@ -16,14 +20,55 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 ![1-3-3](/pic/1-3-3.png)
 ![1-3-4](/pic/1-3-4.png)
 #### 1-4 Show a screenshot of a slightly different Bezier curve by moving the original control points around and modifying the parameter t via mouse scrolling.
-
+![1-4](/pic/1-4.png)
 ### Part2: Bezier Surfaces with Separable 1D de Casteljau
 
 ### Part3: Area-Weighted Vertex Normals
 
 ### Part4: Edge Flip
+#### 4-1 Briefly explain how you implemented the edge flip operation and describe any interesting implementation / debugging tricks you have used.
+Explanation:
+
+Implementation:
+![4-1-1](/pic/4-1-1.png)
+![4-1-2](/pic/4-1-2.png)
+#### 4-2 Show screenshots of the teapot before and after some edge flips.
+Before edge flips:
+![4-2-1](/pic/4-2-1.png)
+
+After edge flips:
+![4-2-2](/pic/4-2-2.png)
+
+#### 4-3 Write about your eventful debugging journey, if you have experienced one.
 
 ### Part5: Edge Split
+#### 5-1 Briefly explain how you implemented the edge split operation and describe any interesting implementation / debugging tricks you have used.
+Explanation:
+
+Implementation:
+![5-1-1](/pic/5-1-1.png)
+![5-1-2](/pic/5-1-2.png)
+#### 5-2 Show screenshots of a mesh before and after some edge splits.
+Before edge splits:
+![5-2-1](/pic/5-2-1.png)
+
+After edge splits:
+![5-2-2](/pic/5-2-2.png)
+
+
+
+#### 5-3 Show screenshots of a mesh before and after a combination of both edge splits and edge flips.
+Before edge flips:
+![5-3-1](/pic/5-3-1.png)
+
+After edge flips:
+![5-3-2](/pic/5-3-2.png)
+
+After edge flips:
+![5-3-3](/pic/5-3-3.png)
+#### 5-4 Write about your eventful debugging journey, if you have experienced one.
+
+#### 5-5 If you have implemented support for boundary edges, show screenshots of your implementation properly handling split operations on boundary edges.
 
 ### Part6: Loop Subdivision for Mesh Upsampling
 
