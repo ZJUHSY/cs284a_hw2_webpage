@@ -6,6 +6,8 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 ### Project Overview
 
+ 
+
 ### Part1: Bezier Curves with 1D de Casteljau Subdivision
 #### 1-1 Briefly explain de Casteljau's algorithm and how you implemented it in order to evaluate Bezier curves.
 Explanation:  
@@ -48,11 +50,6 @@ Picture 2-1 shows the final rendering output of teapot.bez.
 
 ### Part3: Area-Weighted Vertex Normals
 
-#### **Implementation**
-##### The key point of our implementation is how to traverse the faces (triangles) surrounding the vertice. We can use the ***normal*** method defined in the 
-***face*** class to calculate the normals for each face. Besides, we can use the ![equation]("https://latex.codecogs.com/gif.image?%5Cdpi%7B50%7D%20%5Cbg_white%20%5Csqrt%7Bs(s-a)(s-b)(s-c)%7D,%20s%20=%20%5Cfrac%7Ba&plus;b&plus;c%7D%7B2%7D" )
-
-
 ### Part4: Edge Flip
 #### 4-1 Briefly explain how you implemented the edge flip operation and describe any interesting implementation / debugging tricks you have used.
 Explanation of Implementation:
@@ -76,13 +73,22 @@ After edge flips:
 ![4-2-2](/pic/4-2-2.png)
 
 #### 4-3 Write about your eventful debugging journey, if you have experienced one.
-
+In our first attempt, we didn't draw a clear image in advance as a reference, but wrote code according to intuition. In the result of flip, H1 and H2 were in the opposite direction, as shown in the figure below.
+![4-3-1](/pic/4-3-1.png)
+In this case, ordinary flip can still succeed, but because the sequence closed loop is not formed inside the triangle, there will be a vacancy after multiple flips. As shown in the figure below.
+![4-3-2](/pic/4-3-2.png)
+We tried to transform repeatedly in the figure and looked at each Halfedge direction to track the bug, then found the reason in the code logic, and finally modified it correctly. This is an unforgettable debugging experience which reminds us that when the brain can't remember everything clearly, we should draw it down as a reference.
 
 ### Part5: Edge Split
 #### 5-1 Briefly explain how you implemented the edge split operation and describe any interesting implementation / debugging tricks you have used.
 Explanation of Implementation:
 
 The principle of edge split is similar to that of edge flip, except that split does not eliminate the original diagonal, but adds a new connection between the middle point and the other two vertices on the basis of retaining the original diagonal. The operations needed to modify various parameters are basically the same as edge flip. The biggest difference in the implementation is that edge split adds a new intermediate point. Similarly, before starting coding, we marked out each Halfedge, Vertex, Edge and Face in the figure according to the provided data structure.
+
+Debugging tricks:
+
+The trick of this part is similar with Part4.
+It is necessary to determine the name of each variable before writing code, which can help us judge whether the traversal and modified topology is correct in real time. Secondly, in the process of writing code, we need to complete it in a certain order, either in the order of each structure type or in the order of all elements related to each Face. It should be noted that if we choose each structure type as the order, we'd better start with Halfedge, because halfedge is associated with each other, and other structure types are not necessarily associated with each other.
 ![5-1-1](/pic/5-1-1.png)
 In Part4, because the setNeighbors() function needs to input the twin of Halfedge, we also define the twin of border when traversing the initial structure. However, in Part5, since the number of variables increases significantly, we no longer define the twin of border, but directly enter Halfedge->twin in setNeighbor(), which can simplify the code.
 ![5-1-2](/pic/5-1-2.png)
@@ -106,8 +112,7 @@ After edge flip:
 After the combination of both edge splits and edge flips:
 ![5-3-3](/pic/5-3-3.png)
 #### 5-4 Write about your eventful debugging journey, if you have experienced one.
-
-#### 5-5 If you have implemented support for boundary edges, show screenshots of your implementation properly handling split operations on boundary edges.
+After obtaining the experience of Part4, we carefully drew the reference figure, clarified the logic before writing the code, and achieved BugFree in this part!!!
 
 ### Part6: Loop Subdivision for Mesh Upsampling
 
