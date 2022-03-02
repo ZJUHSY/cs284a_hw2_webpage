@@ -42,13 +42,25 @@ Third evaluation and get final point:
 #### **How de Casteljau algorithm extends to Bezier surfaces?**
 Beizer Surface is similar to a high-dimensional version of Beizer curves. For each point, we define a (u,v) point, which u will produce a final beizer 
 curve for one row of control points. Therefore, we will produce a list of control points for each row. And v will determine the final surface point along those moving curves. 
+
 #### **Implementations**
 We first use lerps to caculate control points in each stage. And then we capsulate the ***evaluate1D*** function calling the ***evaluateStep*** for one step iteratively. Therefore, ***evaluate1D*** will produce a moving curve point for each row of control points. And finally function ***evaluate*** will call ***evaluate1D*** for each of its rows and produce the final surface point mentioned above. 
 Picture 2-1 shows the final rendering output of teapot.bez. 
 
 ![2-1](/pic/p2.png)
 
+
 ### Part3: Area-Weighted Vertex Normals
+
+#### **Implementation**
+We can use the ***normal*** method defined in the ***face*** class to calculate the normals for each face. Besides, we can use the ![\sqrt{s(s-a)(s-b)(s-c)}, s = \frac{a+b+c}{2}](https://latex.codecogs.com/svg.image?%5Cbg_green%20%5Csqrt%7Bs(s-a)(s-b)(s-c)%7D,%20s%20=%20%5Cfrac%7Ba&plus;b&plus;c%7D%7B2%7D) formula to calculate the area of each face. 
+
+Hovwever, the most important part of this implementation is to traverse the faces (triangles) surrounding the vertice. To traverse adjacent face, we can use the half edge strcuture. Each step of the loop we calculate the weighted normals of the face where current half edge belongs to. And we can use h->twin->next->next to access the next surrounding face.
+
+####Results
+Picture 3-1 is the result of our implementation after Phong shanding. We can see that the teopot is smoother compared to normal shading.
+![3-1](/pic/3.png)
+
 
 ### Part4: Edge Flip
 #### 4-1 Briefly explain how you implemented the edge flip operation and describe any interesting implementation / debugging tricks you have used.
