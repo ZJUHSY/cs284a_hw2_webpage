@@ -25,9 +25,14 @@ To realize the de Casteljau's algorithm, we need to modify the function evaluate
 ![1-2](/pic/1-2.png)
 #### 1-3 Show screenshots of each step / level of the evaluation from the original control points down to the final evaluated point.
 Because there are four original points, it takes three evaluations to get the final point.
+
+Original point:
 ![1-3-1](/pic/1-3-1.png)
+First evaluation:
 ![1-3-2](/pic/1-3-2.png)
+Second evaluation:
 ![1-3-3](/pic/1-3-3.png)
+Third evaluation and get final point:
 ![1-3-4](/pic/1-3-4.png)
 #### 1-4 Show a screenshot of a slightly different Bezier curve by moving the original control points around and modifying the parameter t via mouse scrolling.
 ![1-4](/pic/1-4.png)
