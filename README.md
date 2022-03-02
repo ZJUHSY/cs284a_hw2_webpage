@@ -48,6 +48,11 @@ Picture 2-1 shows the final rendering output of teapot.bez.
 
 ### Part3: Area-Weighted Vertex Normals
 
+#### **Implementation**
+##### The key point of our implementation is how to traverse the faces (triangles) surrounding the vertice. We can use the ***normal*** method defined in the 
+***face*** class to calculate the normals for each face. Besides, we can use the ![equation]("https://latex.codecogs.com/gif.image?%5Cdpi%7B50%7D%20%5Cbg_white%20%5Csqrt%7Bs(s-a)(s-b)(s-c)%7D,%20s%20=%20%5Cfrac%7Ba&plus;b&plus;c%7D%7B2%7D" )
+
+
 ### Part4: Edge Flip
 #### 4-1 Briefly explain how you implemented the edge flip operation and describe any interesting implementation / debugging tricks you have used.
 Explanation of Implementation:
