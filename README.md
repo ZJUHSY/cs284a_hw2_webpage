@@ -9,6 +9,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 ### Part1: Bezier Curves with 1D de Casteljau Subdivision
 #### 1-1 Briefly explain de Casteljau's algorithm and how you implemented it in order to evaluate Bezier curves.
 Explanation:
+The de Casteljau's algorithm can calculate the points c(u), u∈[0,1] on the Bezier curve by a set of U values, we can calculate the coordinate sequence on the Bezier curve and draw the Bezier curve by it.
 
 Implementation:
 
@@ -58,13 +59,13 @@ After edge splits:
 
 
 #### 5-3 Show screenshots of a mesh before and after a combination of both edge splits and edge flips.
-Before edge flips:
+Original:
 ![5-3-1](/pic/5-3-1.png)
 
-After edge flips:
+After edge flip:
 ![5-3-2](/pic/5-3-2.png)
 
-After edge flips:
+After the combination of both edge splits and edge flips:
 ![5-3-3](/pic/5-3-3.png)
 #### 5-4 Write about your eventful debugging journey, if you have experienced one.
 
