@@ -7,9 +7,14 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 ### Project Overview
 
 ### Part1: Bezier Curves with 1D de Casteljau Subdivision
+#### 1-1 Briefly explain de Casteljau's algorithm and how you implemented it in order to evaluate Bezier curves.
 #### 1-2 Take a look at the provided .bzc files and create your own Bezier curve with 6 control points of your choosing. Use this Bezier curve for your screenshots below.
 ![1-2](/pic/1-2.png)
 #### 1-3 Show screenshots of each step / level of the evaluation from the original control points down to the final evaluated point.
+![1-3-1](/pic/1-3-1.png)
+![1-3-2](/pic/1-3-2.png)
+![1-3-3](/pic/1-3-3.png)
+![1-3-4](/pic/1-3-4.png)
 #### 1-4 Show a screenshot of a slightly different Bezier curve by moving the original control points around and modifying the parameter t via mouse scrolling.
 
 ### Part2: Bezier Surfaces with Separable 1D de Casteljau
